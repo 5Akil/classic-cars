@@ -1,0 +1,335 @@
+/* common styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+}
+html{
+    scroll-behavior: smooth;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color: #ccc;
+}
+@font-face {
+    font-family: myFont;
+    src: url(fonts/LobsterTwo-Regular.ttf);
+}
+/* End of common styling  */
+
+/* menu icon */
+.menu{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top:  40px;
+    left: 40px;
+    z-index: 12;
+    flex-direction: column;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.menu.change{
+    transform: rotate(45deg);
+    left: 15vw;
+}
+.menu-line{
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    background-color: white ;
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px black;
+}
+.change .menu-line_1{
+    transform: rotate(270deg) translateX(-0.7rem);
+}
+.change .menu-line_2{
+    transform: rotate(360deg)  translateY(-0.4rem);
+}
+/* End of menu icon  */
+ 
+/* navbar */
+.navbar{
+    width: 15vw;
+    height: 100vh;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -15vw;
+    padding: 80px 0 0 40px;
+    z-index: 10;
+    transition: left 0.5s;
+    font-family: myFont;
+    
+}
+.navbar.change{
+    left: 0;
+}
+.navbar-link{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: gray;
+}
+.navbar-link:hover{
+    color: black;
+}
+/* End of navbar  */
+
+/* section common styling */
+.wrapper{
+    width: 100%;
+    perspective: 400px;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 20px;
+    position: relative;
+    left: 0;
+    background-color: #efefef;
+    box-shadow: 5px 5px 10px #aaa;
+    transform-origin: left;
+    transition: left 0.5s , transform 0.5s;
+}
+section.change{
+    left: 15vw;
+    transform: rotateY(10deg);
+}
+
+.section-heading{
+    color: #ffff;
+    font-size: 80px;
+    font-weight: 600;
+    font-family: myFont;
+    letter-spacing: 5px;
+    margin: 50px 0;
+    word-spacing: 5px;
+    text-align: center;
+    text-shadow: 3px 3px 5px black;
+}
+/* End of section common styling  */
+
+/* section-1  */
+.section-1{
+    flex-direction: column;
+    background-image: url(images/bg-section1.jpg);   
+}
+.section-1-image{
+    width: 70%;
+    margin-top: 60px;
+}
+.section-1-heading{
+    text-shadow: 5px 5px 5px black , 6px 6px 6px black;
+}
+/* End of section-1  */
+
+/* section2  */
+.section-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.car-card{
+    width: 380px;
+    margin: 0 30px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 6px 6px 6px gray;
+    position: relative;
+    transition: box-shadow 0.5s;
+}
+.car-card h2{
+    color: aliceblue;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+.car-card:hover {
+    box-shadow: 8px 8px 8px grey;
+}
+.car-card h3{
+    font-size: 18px;
+    color: #777;
+}
+.card-img{
+    width: 100%;
+    opacity: 0.8;
+}
+.car-card:hover .card-img{
+    opacity: 1;
+}
+.car-card button{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    color: whitesmoke;
+    background-color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    box-shadow:  1px 1px 5px #bbb;
+}
+/* End of section-2  */
+
+/* section-3  */
+.section-3{
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.video-gallery{
+    flex-wrap: wrap;
+}
+video{
+    width: 25%;
+    margin: 10px;
+    opacity: 0.8;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+video:hover{
+    opacity: 1;
+    box-shadow: 5px 5px 10px #111 ;
+}
+/* End of section-3  */
+
+/* section-4 */
+.section-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rack{
+    margin: 80px 0;
+    perspective: 200px;
+}
+.image-rack{
+    height: 30px;
+    width: 80%;
+    perspective: 100px;
+    position: relative;
+    background-color: rgba(38, 126, 199, 0.8);
+    margin: auto;
+    box-shadow: 10px 10px 50px  black;
+}
+.image-rack::before{
+    content: "";
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    background-color: rgba(34, 152, 248, 0.7);
+    transform: rotateX(20deg);
+    transform-origin: bottom;
+}
+.rack img{
+    width: 15%;
+    position: absolute;
+    bottom: 60px;
+    transform:  translateX(-50%) rotateX(2deg);
+    transform-origin: bottom;
+    box-shadow: 5px -5px 30px rgb(145, 145, 145);
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+.img-1{
+    left: 30%;
+}
+.img-2{
+    left: 50%;
+}
+.img-3{
+    left: 70%;
+}
+.rack img:hover{
+    transform: translateX(-50%) rotatex(0deg);
+    box-shadow: 0 0.2rem 0.3rem #888
+}
+/* End of section-4  */
+ 
+/* section-5  */
+.section-5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url(images/bg-section5.jpg) center no-repeat;
+    background-size: cover;
+}
+.contact-form{
+    width: 600px;
+    height: 450px;
+    padding:  50px ;
+    flex-direction: column;
+    border: 20px solid rgba(255, 255, 255 , 0.9);
+    margin-bottom: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.contact-form input , textarea{
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px  ;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+.contact-form input:focus{
+    background-color: rgba(255, 255, 255 , 0.2);
+}
+.contact-form .form-btn{
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    color: #444;
+    cursor: pointer;
+}
+.contact-form textarea {
+    max-width: 100%;
+    min-height: 8rem;
+  }
+  /* End of section-5  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
